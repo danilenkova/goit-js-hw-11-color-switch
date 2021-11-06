@@ -14,10 +14,11 @@ const refs = {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
   changeColor() {
-    do {
+    newColor = this.colors[this.randomIntegerFromInterval(0, this.colors.length - 1)];
+    if (newColor === currentColor) {
       newColor = this.colors[this.randomIntegerFromInterval(0, this.colors.length - 1)];
       this.body.style.background = newColor;
-    } while (newColor === currentColor) {
+    } else {
       this.body.style.background = newColor;
       currentColor = newColor;
     }
